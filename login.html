@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Iniciar Sesion | Rudok </title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="img/carro.png">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyBOkMOXPFT3wJOJfeUCCsvobquUFna_ghM",
+		    authDomain: "micol-20152947.firebaseapp.com",
+		    databaseURL: "https://micol-20152947.firebaseio.com",
+		    projectId: "micol-20152947",
+		    storageBucket: "micol-20152947.appspot.com",
+		    messagingSenderId: "592066245324"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+</head>
+<body>
+<header>
+<nav class="menu navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          
+          <a class="navbar-brand" href="index.html">Rudok Chat</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        
+          <ul class="nav navbar-nav navbar-right">
+			<a href="registrarse.html" class="btn btn-danger navbar-btn"><span class="glyphicon glyphicon-user"></span>  Registrarse</a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+   
+</header>
+<section class="jumbotron"></section>
+
+
+
+
+
+
+
+<div class="container">
+  <div class="col-lg-4"></div>
+  <section class="col-lg-4 text-center">
+     <img class="r" src="img/login.png" width="200px">
+  <form role="form" class="">
+
+    <div class="form-group">
+      <input type="text" id="correo" class="form-control" placeholder="Usuario">
+    </div>
+
+    <div class="form-group">
+      <input type="password" id="clave" class="form-control" placeholder="Contraseña">
+    </div>
+    <p class="text-left">¿Olvidaste la contraseña? <a href="recuperar-clave.html">Recuperala aquí</a> </p>
+      <input type="button" onclick="IniciarSesion();" class="btnLG btn btn-info" value="Entrar &raquo;"  /> 
+    <a  href="registrarse.html" class="btnRG btn btn-success">Registrarse &raquo;</a>
+    
+
+  </form>
+ </section>
+ <div class="col-lg-4"></div>
+</div>
+<script type="text/javascript">
+	 var usuario = null;
+        function IniciarSesion(){
+            correo = document.getElementById('correo').value;
+            clave = document.getElementById('clave').value;
+            
+            firebase.auth().signInWithEmailAndPassword(correo, clave).then(function (usuario){
+                sessionStorage.setItem('usuario', JSON.stringify(usuario));
+                window.location = "chat.html";
+                
+            }).catch(function(error){
+                alert(error.message);
+            });
+            
+            sessionStorage.setItem('usuario', JSON.stringify(usuario));
+                  
+        }    
+    
+        function cambiarClave(){
+
+            var auth = firebase.auth();
+            var emailAddress = document.getElementById('correoRecuperacion').value;
+            auth.sendPasswordResetEmail(emailAddress).then(function() {
+                alert("Correo de recuperación enviado correctamente.");
+                window.location ="login.html";
+            }, function(error) {
+                error="Correo de recuperación incorrecto.";
+              alert(error);
+            });
+         }
+        
+   
+    
+
+</script>
+</body>
+</html>

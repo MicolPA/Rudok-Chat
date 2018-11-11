@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Iniciar Sesion | Rudok </title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="img/carro.png">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyBOkMOXPFT3wJOJfeUCCsvobquUFna_ghM",
+		    authDomain: "micol-20152947.firebaseapp.com",
+		    databaseURL: "https://micol-20152947.firebaseio.com",
+		    projectId: "micol-20152947",
+		    storageBucket: "micol-20152947.appspot.com",
+		    messagingSenderId: "592066245324"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+</head>
+<body>
+<header>
+<nav class="menu navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          
+          <a class="navbar-brand" href="index.html">Rudok Chat</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        
+          <ul class="nav navbar-nav navbar-right">
+			<a href="registrarse.html" class="btn btn-danger navbar-btn"><span class="glyphicon glyphicon-user"></span>  Registrarse</a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+   
+</header>
+
+ <section class="jumbotron" id="jumbotron-lg">
+
+ </section>
+
+ <section class="login">
+ <img src="img/candado.png" width="90%">
+
+	<form role="form" class="formularioLG">
+
+	  <div class="form-group">
+	    <input type="text" id="correoRecuperacion" class="form-control" placeholder="Usuario">
+	  </div>
+ 	  <input type="button" onclick="cambiarClave();" class="btnLG btn btn-info" value="Cambiar Clave"  /> 
+
+	</form>
+ </section>
+<script type="text/javascript">
+function cambiarClave(){
+		var auth = firebase.auth();
+		var emailAddress = document.getElementById('correoRecuperacion').value;
+
+		auth.sendPasswordResetEmail(emailAddress).then(function() {
+			alert("Correo enviado correctamente");
+			window.location = "login.html";
+		}, function(error) {
+		  alert("Dirección de correo electronico invalida.");
+		});
+}
+
+
+
+</script>
+</body>
+</html>

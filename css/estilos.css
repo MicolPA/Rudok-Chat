@@ -1,0 +1,192 @@
+*{
+	margin: 0px;
+	padding: 0px;
+
+}
+body{
+	background-repeat: no-repeat;
+
+}
+.portada{
+	margin: 0px;
+	width: 100%;
+	text-align: center;
+	padding: 10%;
+	padding-top: 12%;
+	color: white;
+}
+
+.no-visible{
+	display: none;
+}
+
+#formapodo{
+	width: 100%;
+	
+}
+
+.divContenedor{
+	width: 25%;
+	float: left;
+	padding: 1%;	
+	
+}
+
+.chat li{
+	margin-bottom: 2%;
+	background: #d9edf7;
+	border-radius: 10px;
+	border: 1px solid #d9edf7;
+}
+
+.chat {
+	
+}
+
+.no-decoracion{
+	list-style: none;
+}
+
+.divcon{
+	margin: 0px;
+}
+
+.maxContenedor{
+	width: 70%;
+	float: right;
+	padding-bottom: 5%;
+}
+
+#secContenedor{
+	width: 70%;
+	float:left;
+	text-decoration: none;
+
+	text-align: left;
+}
+
+.divMensaje{
+	margin:auto;
+}
+
+#mostrarMensajes{
+	bottom: 0;
+	
+}
+
+.divlogin{
+	padding-left: 5%;
+	padding-top: 5%;
+
+}
+
+#jumbotron-lg{
+
+	background: #0091F2;
+	color: white;
+	padding: 1%;
+	margin-bottom: 10%;
+}
+
+#jumbotron-lk{
+
+	background: #0091F2;
+	color: white;
+}
+.contD{
+	width: 80%;
+	display: inline-block;
+	float: right;
+}
+
+.imgJumbo{
+	width: 10%;
+	display: inline-block;
+	float: left;
+}
+
+.imgJumbo img{
+	width: 100%;
+}
+
+#jumbotron-r{
+	
+	background: #8500BA;
+	color: white;
+}
+/*.login{
+	margin: auto;
+	width: 25%;
+	text-align: center;
+	border-radius: 2%;
+	border: 2px solid #0091F2;
+
+	padding-right:4%;
+	padding-left:4%;
+	padding-bottom:4%;
+	padding-top:1%;
+}
+*/
+.formulario-registro{
+	width: 30%;
+	border-radius: 10px; 
+	margin: auto;
+	border: 2px solid #0091F2;
+	text-align: center;
+	padding-right:4%;
+	padding-left:4%;
+	padding-bottom:2%;
+	padding-top:1%;
+}
+
+
+.formularioInfo{
+
+	display: table;
+	width: 100%;
+	height:200px;
+	padding-bottom: 2%;
+}
+
+.formRG{
+	width: 20%;
+	float: left;
+	background:  #0091F2;
+	height: 100%;
+	top: 50%;
+	
+}
+
+.formRG p{
+
+	vertical-align: middle;
+}
+
+
+
+.login p{
+	text-align: left;
+}
+
+.formularioLG{
+	width: 100%;
+}
+
+.btnLG {
+	float: left;
+}
+.btnRG {
+	float: right;
+
+}
+.FormRGInfo{
+	background: #0091F2;
+	width: 100%;
+	padding: 1%;
+	margin-bottom:1%;
+	color: white;
+	border-radius: 10px; 
+}
+
+/*********************************/
+
